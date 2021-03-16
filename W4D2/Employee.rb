@@ -1,4 +1,5 @@
 class Employee
+    attr_reader :name, :title, :salary
 
     def initialize(name, title, salary, boss)
         @name = name
@@ -8,11 +9,6 @@ class Employee
     end
 
     def bonus(multiplier)
-        bonus = 0
-        employees.each do |employee|
-            bonus += employee.salary
-        end
-        bonus * multiplier
+        self.salary * multiplier
     end
-
 end
