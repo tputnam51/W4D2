@@ -1,6 +1,7 @@
 require_relative 'Piece'
 
 class Board
+    attr_reader :rows 
 
     def initialize
         @rows = Array.new(8) { Array.new(8, nil) } 
@@ -15,15 +16,17 @@ class Board
         end
     end
 
-    def []
-
+    def [](pos)
+        row, col = pos 
+        @rows[row][col]
     end
 
-    def []=
-
+    def []=(pos, value)
+        row, col = pos 
+        @rows[row][col] = value 
     end
 
-    def move_piece()
+    def move_piece(start_pos, end_pos)
 
     end
 end
