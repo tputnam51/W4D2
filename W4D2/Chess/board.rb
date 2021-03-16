@@ -27,6 +27,12 @@ class Board
     end
 
     def move_piece(start_pos, end_pos)
-
+        piece = self[start_pos]
+        if !piece.nil? && self[end_pos].nil?
+            self[end_pos] = piece 
+            self[start_pos] = nil 
+        else
+            puts "Piece can't move to that position"
+        end
     end
 end
