@@ -27,6 +27,10 @@ class Board
     end
 
     def move_piece(start_pos, end_pos)
+        
+        raise "'start_pos' in not valid" unless valid_pos?(start_pos) || self[start_pos].is_a?(Piece)
+        raise "'end_pos' in not valid" unless valid_pos?(end_pos)
+
         piece = self[start_pos]
         if !piece.nil? && self[end_pos].nil?
             self[end_pos] = piece 
@@ -34,5 +38,20 @@ class Board
         else
             puts "Piece can't move to that position"
         end
+    end
+
+    def valid_pos?(pos)
+        pos.all? {|i| i.between?(0,7) }
+    end
+
+
+
+    
+    def add_piece(piece, pos)
+
+    end
+
+    def checkmate?
+
     end
 end
