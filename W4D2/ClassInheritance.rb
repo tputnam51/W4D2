@@ -1,0 +1,3 @@
+class ClassInheritance
+    
+end
