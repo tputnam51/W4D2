@@ -11,22 +11,10 @@ module Slideable
 
     def horizontal_dirs
         HORIZONTAL_DIRS
-        # new_pos = HORIZONTAL_DIRS.map do |(dy, dx)|
-        #     current_y = self.pos[0]
-        #     current_x = self.pos[1]
-        #     [current_y + dy, current_x + dx]
-        # end
-        # new_pos.select {|pos| pos.all? {|i| i.between?(0,7)}}
     end
 
     def diagonal_dirs
         DIAGONAL_DIRS
-        # new_pos = DIAGONAL_DIRS.map do |(dy, dx)|
-        #     current_y = self.pos[0]
-        #     current_x = self.pos[1]
-        #     [current_y + dy, current_x + dx]
-        # end
-        # new_pos.select {|pos| pos.all? {|i| i.between?(0,7)}}
     end
                      
 end
