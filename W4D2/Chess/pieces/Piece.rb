@@ -13,4 +13,8 @@ class Piece
     def empty?
         false 
     end
+
+    def valid_moves
+
+    end
 end
