@@ -6,4 +6,8 @@ class Bishop < Piece
         '♗'.colorize(color)
     end
 
+    def move_dirs
+        DIAGONAL_DIRS
+    end
+
 end
