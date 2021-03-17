@@ -1,8 +1,8 @@
 module Slideable
     HORIZONTAL_DIRS = [ [0, 1],
-                        [0, -1],
+                        [0,-1],
                         [1, 0],
-                        [-1, 0]
+                        [-1,0]
                       ].freeze
                         
 
@@ -33,8 +33,8 @@ module Slideable
 
     def grow_unblocked_moves_in_dir(dy,dx)    # [0,0]   #[dy,dx]
         moves = []
-        cur_pos = self.pos
-        new_pos = cur_pos.first + dy, cur_pos.last + dx
+        cur_y, cur_x = self.pos
+        new_pos = [cur_y + dy, cur_y + dx]
         while 
     end
                      
