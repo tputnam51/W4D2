@@ -15,7 +15,7 @@ class Piece
     end
 
     def empty?
-        false 
+        false
     end
 
     def valid_moves
@@ -39,8 +39,8 @@ class Piece
 
 end
 
-rook = Piece.new(rook)
+# rook = Piece.new
 
-rook.valid_moves 
+# rook.valid_moves 
     # rook.horizontal_dirs
         # rook.pos (current position of the rook)
