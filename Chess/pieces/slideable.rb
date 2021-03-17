@@ -22,7 +22,11 @@ module Slideable
     end
 
     def moves
-
+        final_moves = []
+        move_dirs.each do |dy, dx|
+            final_moves += grow_unblocked_moves_in_dir(dy,dx)
+        end
+        final_moves
     end
 
     private
@@ -34,36 +38,23 @@ module Slideable
     def grow_unblocked_moves_in_dir(dy,dx)    # [0,0]   #[dy,dx]
         moves = []
         cur_y, cur_x = self.pos
-        new_pos = [cur_y + dy, cur_y + dx]
 
-        while self.board.valid_pos?(new_pos)
-            if board.empty?(new_pos) 
-                moves << new_pos
-
+        pos = [(cur_y + dy), (cur_x + dx)]
+        while self.board.valid_pos?(pos)
+            if board.empty?(pos) 
+                moves << pos
             else 
-                if self.color != board[new_pos].color
-                moves << new_pos
+                if self.color != board[pos].color
+                    moves << pos
                 end
-                break
+                break 
             end
-            new_pos = [new_pos.first + dy, new_pos.last + dx] 
+            pos = [pos.first + dy, pos.last + dx] 
         end
         moves
     end
                      
 end
-
-
-
-
-
-
-
-
-
-
-
-
 
 # #chess board 8 x 8:
 # [[[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7]],

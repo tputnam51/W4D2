@@ -1,4 +1,4 @@
-#require_relative 'pieces'
+require "byebug"
 Dir["./pieces/*.rb"].each {|file| require file }
 
 
@@ -6,7 +6,7 @@ class Board
     attr_reader :rows 
 
     def initialize
-        @rows = Array.new(8) { Array.new(8, nil) } 
+        @rows = Array.new(8) { Array.new(8, NullPiece.instance) } 
         populate_front 
         populate_back
     end
@@ -59,9 +59,10 @@ class Board
         raise "'end_pos' in not valid" unless valid_pos?(end_pos)
 
         piece = self[start_pos]
-        if !piece.nil? && self[end_pos].nil?
+        if !piece.is_a?(NullPiece) && self[end_pos].is_a?(NullPiece)
             self[end_pos] = piece 
-            self[start_pos] = nil 
+            self[start_pos] = NullPiece.instance 
+            piece.pos = end_pos 
         else
             puts "Piece can't move to that position"
         end
@@ -71,9 +72,9 @@ class Board
         pos.all? {|i| i.between?(0,7) }
     end
 
-    # def empty?(pos)
-    #     self[pos].empty?
-    # end
+    def empty?(pos)
+        self[pos].empty?
+    end
 
     
     def add_piece(piece, pos)
@@ -86,3 +87,7 @@ class Board
 
     end
 end
+
+# b = Board.new 
+# b.move_piece([7,0],[4,4])
+# p b[[4,4]].moves 
