@@ -35,7 +35,16 @@ module Slideable
         moves = []
         cur_y, cur_x = self.pos
         new_pos = [cur_y + dy, cur_y + dx]
-        while self.board[new_pos].empty?
+
+        while self.board.valid_pos?(new_pos)
+
+            if board.
+
+                moves << pos
+            end
+        
+            
+        end
     end
                      
 end

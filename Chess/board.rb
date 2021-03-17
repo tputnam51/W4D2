@@ -11,7 +11,7 @@ class Board
     def populate
         [0,1,6,7].each do |row|
             (0..7).each do |i|
-                @rows[row][i] = Piece.new
+                @rows[row][i] = Piece.new()
             end
         end
     end
@@ -44,10 +44,14 @@ class Board
         pos.all? {|i| i.between?(0,7) }
     end
 
-
+    def empty?(pos)
+        
+    end
 
     
     def add_piece(piece, pos)
+        
+        self[pos] = piece
 
     end
 
