@@ -5,9 +5,17 @@ require_relative "queen"
 class NullPiece
     include Singleton
 
-    # def initialize 
+    def initialize 
 
-    # end
+    end
+
+    def moves 
+        []
+    end
+
+    def symbol 
+        " "
+    end
 
     def empty?
         true
