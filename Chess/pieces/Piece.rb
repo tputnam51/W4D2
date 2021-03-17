@@ -2,6 +2,8 @@ require "colorize"
 
 class Piece
 
+    attr_reader :color, :board, :pos
+
     def initialize(color, board, pos)
         @color = color
         @board = board
@@ -29,6 +31,12 @@ class Piece
             [current_y + dy, current_x + dx]
         end.select {|pos| pos.all? {|i| i.between?(0,7)} }
     end
+
+    def pos=(val)
+
+    end
+
+
 end
 
 rook = Piece.new(rook)
