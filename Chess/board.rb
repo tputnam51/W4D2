@@ -71,9 +71,9 @@ class Board
         pos.all? {|i| i.between?(0,7) }
     end
 
-    def empty?(pos)
-        
-    end
+    # def empty?(pos)
+    #     self[pos].empty?
+    # end
 
     
     def add_piece(piece, pos)
