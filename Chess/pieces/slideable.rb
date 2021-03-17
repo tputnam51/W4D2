@@ -31,21 +31,21 @@ module Slideable
         raise NotImplementedError
     end
 
-    def grow_unblocked_moves_in_dir(dy,dx)    # [0,0]   #[dy,dx]
-        moves = []
-        cur_y, cur_x = self.pos
-        new_pos = [cur_y + dy, cur_y + dx]
+    # def grow_unblocked_moves_in_dir(dy,dx)    # [0,0]   #[dy,dx]
+    #     moves = []
+    #     cur_y, cur_x = self.pos
+    #     new_pos = [cur_y + dy, cur_y + dx]
 
-        while self.board.valid_pos?(new_pos)
+    #     while self.board.valid_pos?(new_pos)
 
-            if board.
+    #         if board.
 
-                moves << pos
-            end
+    #             moves << pos
+    #         end
         
             
-        end
-    end
+    #     end
+    # end
                      
 end
 
